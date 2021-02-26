@@ -18,8 +18,22 @@ spec:
     spec:
       containers:
       - image: andylibrian/terjang:latest
+        imagePullPolicy: Always
         name: terjang
         args:
         - server
         ports:
         - containerPort: 9009
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - worker
+                  - server
+              topologyKey: kubernetes.io/hostname
