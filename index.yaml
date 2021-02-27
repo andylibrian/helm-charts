@@ -1,0 +1,22 @@
+apiVersion: v1
+entries:
+  terjang:
+  - apiVersion: v1
+    appVersion: latest
+    created: "2021-02-27T13:56:47.100122982+07:00"
+    description: Scalable HTTP load testing tool built on Vegeta
+    digest: 5c9236040dc55dac2780cdeec24ba16a7fa55fb7f20279cc9b6c794ae31e7816
+    home: https://github.com/andylibrian/terjang
+    keywords:
+    - loadtest
+    - http
+    maintainers:
+    - email: andy.librian@gmail.com
+      name: Andy Librian
+    name: terjang
+    sources:
+    - https://github.com/andylibrian/terjang
+    urls:
+    - https://github.com/andylibrian/helm-charts/releases/download/terjang-0.0.1/terjang-0.0.1.tgz
+    version: 0.0.1
+generated: "2021-02-27T13:56:47.099713209+07:00"
