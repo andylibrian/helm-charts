@@ -24,6 +24,43 @@ spec:
         - server
         ports:
         - containerPort: 9009
+          name: http
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: http
+        livenessProbe:
+          tcpSocket:
+            port: http
+          failureThreshold: 5
+          periodSeconds: 10
+        resources:
+          requests:
+            cpu: {{ .Values.server.requests.cpu }}
+            memory: {{ .Values.server.requests.memory }}
+          {{- with .Values.server.limits }}
+          limits:
+            {{- if .cpu }}
+            cpu: {{ .cpu }}
+            {{- end }}
+            {{- if .memory }}
+            memory: {{ .memory }}
+            {{- end }}
+          {{- end }}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+              - all
+          privileged: false
+          runAsNonRoot: true
+          runAsUser: 10001
+          runAsGroup: 10001
+          readOnlyRootFilesystem: true
+        lifecycle:
+          preStop:
+            exec:
+              command: ["/bin/sh", "-c", "sleep 2"]
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
