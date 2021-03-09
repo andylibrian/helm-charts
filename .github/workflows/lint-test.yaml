@@ -9,6 +9,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
+      - run: pip3 install bdist_wheel
+        name: bdist_wheel
+
       - name: Set up chart-testing
         uses: helm/chart-testing-action@v2.0.1
 
