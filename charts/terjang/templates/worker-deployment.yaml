@@ -26,7 +26,7 @@ spec:
         - "80"
         resources:
           requests:
-            cpu: {{ .Values.worker.requests.cpuabcdefgh }}
+            cpu: {{ .Values.worker.requests.cpuabcdefghi }}
             memory: {{ .Values.worker.requests.memory }}
           {{- with .Values.worker.limits }}
           limits:
