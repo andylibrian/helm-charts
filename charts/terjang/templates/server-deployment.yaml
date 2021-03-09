@@ -36,7 +36,7 @@ spec:
           periodSeconds: 10
         resources:
           requests:
-            cpu: {{ .Values.server.requests.cpu }}
+            cpu: {{ .Values.server.requests.cpuaslkfdsjfk }}
             memory: {{ .Values.server.requests.memory }}
           {{- with .Values.server.limits }}
           limits:
