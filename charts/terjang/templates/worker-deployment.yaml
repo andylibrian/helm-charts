@@ -15,7 +15,7 @@ spec:
         app: worker
     spec:
       containers:
-      - image: andylibrian/terjang:latest
+      - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         name: terjang
         imagePullPolicy: Always
         args:
