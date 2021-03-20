@@ -1,10 +1,12 @@
 apiVersion: v1
 name: terjang
-version: 0.0.2
+version: 0.0.3
 appVersion: "latest"
 description: Scalable HTTP load testing tool built on Vegeta
 keywords:
-- loadtest
+- load-test
+- load-testing
+- benchmarking
 - http
 home: https://github.com/andylibrian/terjang
 sources:
