@@ -1,3 +1,7 @@
+image:
+  repository: ghcr.io/andylibrian/terjang
+  tag: latest
+
 server:
   requests:
     cpu: 1
